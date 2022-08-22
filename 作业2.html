@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+<script>
+    function process(url) {
+        const arr = url.match(/\?[\w\W]*#/)[0].slice(1, this.length - 1).split('&')
+        const obj = arr.reduce((obj, itme) => {
+            obj[itme.split('=')[0]] = itme.split('=')[1]
+            return obj
+        }, {})
+        return obj
+    }
+    console.log(process('http://www.baidu.com/?name=zhangsan&age=18&sex=nan#'));
+</script>
+
+</html>
